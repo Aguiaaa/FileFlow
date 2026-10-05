@@ -1,0 +1,10 @@
+target/
+uploads/
+.git/
+.idea/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FileFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>FileFlow</h1>
+        <p>Simple file sharing, with a visible HTTP learning laboratory.</p>
+    </header>
+
+    <div id="notice" class="notice hidden"></div>
+
+    <section class="upload-box">
+
+        <input
+            type="file"
+            id="fileInput"
+        >
+
+        <button id="uploadButton">
+            Upload
+        </button>
+
+        <span id="selectedFile" class="selected-file">No file selected</span>
+
+    </section>
+
+    <section>
+
+        <div class="section-heading">
+            <div>
+                <h2>Your files</h2>
+                <p class="help-text">Upload, download, share or delete a file.</p>
+            </div>
+            <button id="refreshButton" class="secondary-button">Refresh</button>
+        </div>
+
+        <div class="statistics">
+            <div><strong id="filesCount">0</strong><span>files</span></div>
+            <div><strong id="totalSize">0 B</strong><span>stored size</span></div>
+            <div><strong id="linksCount">0</strong><span>links created this session</span></div>
+        </div>
+
+        <div class="file-tools">
+            <input id="searchInput" type="search" placeholder="Search a file...">
+            <select id="sortSelect" aria-label="Sort files">
+                <option value="recent">Default order</option>
+                <option value="name">Name (A-Z)</option>
+                <option value="size">Largest first</option>
+            </select>
+        </div>
+
+        <div id="files"></div>
+
+    </section>
+
+    <section>
+
+        <h2>Shared links</h2>
+
+        <div id="shareLinks">
+            <p class="empty-state">No shared links yet.</p>
+        </div>
+
+    </section>
+
+    <section class="learning-panel">
+        <div class="section-heading">
+            <div>
+                <h2>HTTP request inspector</h2>
+                <p class="help-text">
+                    Each action below is a real browser request. Observe the method,
+                    endpoint, status code and response time.
+                </p>
+            </div>
+        </div>
+        <div class="http-explanation">
+            <span class="method-post">POST</span>
+            <span>creates or uploads data</span>
+            <span class="method-get">GET</span>
+            <span>reads or downloads data</span>
+            <span class="method-delete">DELETE</span>
+            <span>removes data</span>
+        </div>
+        <div id="lastRequest" class="last-request">
+            <strong>Last request</strong>
+            <p>No request yet. Try uploading a file.</p>
+        </div>
+        <h3>Request history</h3>
+        <div id="requestLog">
+            <p class="empty-state">No request yet. Try uploading a file.</p>
+        </div>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

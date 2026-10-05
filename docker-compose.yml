@@ -1,0 +1,43 @@
+services:
+
+  postgres:
+    image: postgres:17
+
+    environment:
+      POSTGRES_DB: fileflow
+      POSTGRES_USER: fileflow
+      POSTGRES_PASSWORD: fileflow
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fileflow -d fileflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+
+  app:
+    build: .
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/fileflow
+      DB_USER: fileflow
+      DB_PASSWORD: fileflow
+      SPRING_PROFILES_ACTIVE: local
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - fileflow_uploads:/app/uploads
+
+
+volumes:
+  postgres_data:
+  fileflow_uploads:

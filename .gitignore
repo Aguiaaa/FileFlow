@@ -1,0 +1,28 @@
+# Java / Maven
+target/
+*.class
+*.jar
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# FileFlow uploaded files
+uploads/*
+!uploads/.gitkeep
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

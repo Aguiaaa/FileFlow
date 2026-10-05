@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f172a;
+    color: #f8fafc;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 620px;
+    padding: 70px 20px;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.brand-mark {
+    align-items: center;
+    background: #38bdf8;
+    border-radius: 12px;
+    color: #082f49;
+    display: inline-flex;
+    font-size: 22px;
+    font-weight: bold;
+    height: 46px;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 46px;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+header p {
+    color: #94a3b8;
+    margin: 10px 0 0;
+}
+
+.share-card,
+.result-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.file-picker {
+    align-items: center;
+    border: 2px dashed #475569;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.file-picker:hover {
+    border-color: #38bdf8;
+}
+
+.file-picker-icon {
+    color: #38bdf8;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.file-picker span:last-child {
+    color: #94a3b8;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#fileInput {
+    display: none;
+}
+
+button {
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 18px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.primary-button {
+    background: #38bdf8;
+    color: #082f49;
+    margin-top: 18px;
+    width: 100%;
+}
+
+.secondary-button {
+    background: #334155;
+    color: white;
+    white-space: nowrap;
+}
+
+.status {
+    font-size: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.status.success,
+.success-label {
+    color: #86efac;
+}
+
+.status.error {
+    color: #fca5a5;
+}
+
+.status.loading {
+    color: #93c5fd;
+}
+
+.result-card {
+    border-color: #22c55e;
+    margin-top: 18px;
+}
+
+.result-card h2 {
+    font-size: 20px;
+    margin: 8px 0 16px;
+}
+
+.success-label {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.link-row {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.link-row a {
+    color: #7dd3fc;
+    overflow-wrap: anywhere;
+}
+
+#expiration,
+.privacy-note {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.privacy-note {
+    line-height: 1.5;
+    margin: 22px auto 0;
+    max-width: 520px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding-top: 35px;
+    }
+
+    .link-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

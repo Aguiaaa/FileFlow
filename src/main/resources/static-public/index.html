@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileFlow - Partager un fichier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+    <header>
+        <div class="brand-mark">F</div>
+        <h1>Partager un fichier</h1>
+        <p>Choisissez un fichier, créez un lien temporaire et envoyez-le.</p>
+    </header>
+
+    <section class="share-card">
+        <label class="file-picker" for="fileInput">
+            <span class="file-picker-icon">+</span>
+            <strong>Choisir un fichier</strong>
+            <span id="selectedFile">Aucun fichier sélectionné</span>
+        </label>
+        <input id="fileInput" type="file">
+
+        <button id="shareButton" class="primary-button" disabled>
+            Créer le lien
+        </button>
+
+        <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section id="result" class="result-card hidden" aria-live="polite">
+        <span class="success-label">Lien prêt à être partagé</span>
+        <h2>Votre fichier est disponible</h2>
+        <div class="link-row">
+            <a id="shareUrl" target="_blank" rel="noopener"></a>
+            <button id="copyButton" class="secondary-button">Copier</button>
+        </div>
+        <p id="expiration"></p>
+    </section>
+
+    <p class="privacy-note">
+        Le lien est temporaire. Toute personne qui possède ce lien peut télécharger le fichier
+        pendant sa période de validité.
+    </p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
